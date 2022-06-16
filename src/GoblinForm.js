@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function GoblinForm(submitGoblin, goblinFormName, setGoblinFormName, goblinFormColor, goblinFormHP, setGoblinFormHP, setGoblinFormColor){
+export default function GoblinForm({ submitGoblin, goblinFormName, setGoblinFormName, goblinFormColor, goblinFormHP, setGoblinFormHP, setGoblinFormColor }){
   return (
     <div className='goblin-form-container quarter'>
       {/* on submit, call the submitGoblin function, passed in as a prop.
@@ -11,22 +11,28 @@ export default function GoblinForm(submitGoblin, goblinFormName, setGoblinFormNa
         <label>
             Name
           {/* onChange, use the prop setGoblinFormName to set the parent state */}
-          <input required value={goblinFormName} />
-          onChange={(e) => setGoblinFormName(e.target.value)}
+          <input required value={goblinFormName} 
+            onChange={(e) => setGoblinFormName(e.target.value)}
+          />
+          
           {/* note that we're controlling the input's value from parent state */}
         </label>
         <label>
             HP
           {/* onChange, use the prop setGoblinFormHP to set the parent state */}
-          <input required type="number" value={goblinFormHP} />
-          onChange={(e) => setGoblinFormHP(e.target.value)}
+          <input required type="number" value={goblinFormHP} 
+            onChange={(e) => setGoblinFormHP(e.target.value)}
+          />
+          
           {/* note that we're controlling the input's value from parent state */}
         </label>
         <label>
             Color
           {/* onChange, use the prop setGoblinFormColor to set the parent state */}
-          <select required value={goblinFormColor}>
+          <select required value={goblinFormColor} 
             onChange={(e) => setGoblinFormColor(e.target.value)}
+          >
+          
             {/* note that we're controlling the input's value from parent state */}
             <option value="lightGreen">Green</option>
             <option value="lightblue">Blue</option>
